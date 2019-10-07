@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ShaoJie</title>
+</head>
+<body>
+<div th:fragment="sidebar">
+    <div class="bh-sidebar" >
+        <div class="bh-sidebar-main">
+            <p class="bh-portrait"><img th:src="@{static/img/shaojie.jpg}"/></p>
+            <span style="color: #000000">
+                <h1>ShaoJie博客</h1>
+                <h4>个人信息</h4>
+                <p>ShaoJie . java工程师</p>
+                <span>
+
+                </span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="header">
+    <nav class="bh-header" >
+        <a class="active" href="#" th:href="@{/}">首页 .</a>
+        <a href="#" th:href="@{/}">技术 .</a>
+        <a href="#" th:href="@{/}">随笔 .</a>
+    </nav>
+</div>
+
+<div th:fragment="footer">
+    <div class="bh-footer">
+        <p class="bh-copyright"><a href="#">联系我们</a> ShaoJie</p>
+        <p class="bh-copyright">copyright @ 2019 ShaoJie（www.lzmvlog.net）</p>
+    </div>
+</div>
+</body>
+</html>
