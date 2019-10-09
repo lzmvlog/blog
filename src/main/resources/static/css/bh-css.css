@@ -171,9 +171,9 @@ a:hover{
 .bh-artical-content{
     padding:0 60px;
 }
-.bh-artical-title{
-    margin:3rem 0 1rem 0;
-}
+/*.bh-artical-title{*/
+/*    margin:3rem 0 1rem 0;*/
+/*}*/
 .bh-artical h1,.bh-artical h2,.bh-artical h3,.bh-artical h4,.bh-artical h5{
     padding:1.5rem 0 0.5rem 0;
 }
@@ -222,9 +222,9 @@ a:hover{
     height: auto;
 }
 .bh-artical p{
-    padding:0.5rem 0 0.5rem 0;
+    /*padding:0.5rem 0 0.5rem 0;*/
     line-height: 1.8rem;
-    font-size:18px;
+    /*font-size:18px;*/
 }
 .bh-content-info{
     color:#999;

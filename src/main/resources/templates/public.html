@@ -12,11 +12,29 @@
         <div class="bh-sidebar-main">
             <p class="bh-portrait"><img th:src="@{static/img/shaojie.jpg}"/></p>
             <span style="color: #000000">
-                <h1>ShaoJie博客</h1>
+                <h1>ShaoJie博客</h1><hr>
+                <h4>个人介绍</h4>
                 <p>ShaoJie  ·  java工程师</p>
-                 <h4></h4>
                 <p>邮箱：zhang1591313226@163.com</p>
-                <p>城市：贵州贵阳</p>
+                <p>城市：贵州贵阳</p><hr>
+
+                <h4 id="hitokoto"></h4>
+                <script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+                                <!--End-->
+                <script>
+                  fetch('https://v1.hitokoto.cn')
+                      .then(function (res){
+                          return res.json();
+                      })
+                      .then(function (data) {
+                          var hitokoto = document.getElementById('hitokoto');
+                          hitokoto.innerText = data.hitokoto;
+                      })
+                      .catch(function (err) {
+                          console.error(err);
+                      })
+                </script>
             </span>
         </div>
     </div>
@@ -33,7 +51,7 @@
 
 <div th:fragment="footer">
     <div class="bh-footer">
-        <p class="bh-copyright"><a href="#">联系我们</a> ShaoJie</p>
+        <p class="bh-copyright"><a class="button right" href="http://wpa.qq.com/msgrd?v=3&uin=1591313226&site=qq&menu=yes">联系我们</a> ShaoJie</p>
         <p class="bh-copyright">copyright @ 2019 ShaoJie（www.lzmvlog.net）</p>
     </div>
 </div>
