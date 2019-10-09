@@ -3,9 +3,9 @@ server:
 spring:
   datasource:
     driver: com.mysql.cj.jdbc.Driver
-    url:  jdbc:mysql://localhost:3306/myblog?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2B8
+    url:  jdbc:mysql://120.78.189.213:3306/myblog?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2B8
     username: root
-    password: 123456
+    password: 5683
     type: com.alibaba.druid.pool.DruidDataSource
   thymeleaf:
     cache: false
@@ -21,6 +21,6 @@ spring:
     hibernate:
       ddl-auto: update
       #      表中字段命名策略,这里要引入hibernate的核心包，不然这个命名策略会报错
-      naming:
-        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#      naming:
+#        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl

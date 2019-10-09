@@ -13,11 +13,10 @@
             <p class="bh-portrait"><img th:src="@{static/img/shaojie.jpg}"/></p>
             <span style="color: #000000">
                 <h1>ShaoJie博客</h1>
-                <h4>个人信息</h4>
-                <p>ShaoJie . java工程师</p>
-                <span>
-
-                </span>
+                <p>ShaoJie  ·  java工程师</p>
+                 <h4></h4>
+                <p>邮箱：zhang1591313226@163.com</p>
+                <p>城市：贵州贵阳</p>
             </span>
         </div>
     </div>
@@ -25,9 +24,10 @@
 
 <div th:fragment="header">
     <nav class="bh-header" >
-        <a class="active" href="#" th:href="@{/}">首页 .</a>
-        <a href="#" th:href="@{/}">技术 .</a>
-        <a href="#" th:href="@{/}">随笔 .</a>
+        <!--class="active"-->
+        <a href="#" th:href="@{/}">首页 .</a>
+        <a href="#" th:href="@{/skill}">技术 .</a>
+        <a href="#" th:href="@{/vlog}">随笔 .</a>
     </nav>
 </div>
 

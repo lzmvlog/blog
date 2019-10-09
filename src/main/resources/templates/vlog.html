@@ -21,15 +21,15 @@
         <div class="bh-main">
             <div class="bh-main-body">
                 <div th:include="public :: header"></div>
-                <div class="bh-card" th:each="index : ${index}">
+                <div class="bh-card" th:each="vlog : ${vlog}">
                     <div class="bh-card-main">
-                        <h3 class="bh-card-main-title"><a href="detail.html" th:href="@{/detail/} + ${index.getTheme()}" th:utext="${index.getTheme()}">JPress的ehcache缓存方案、以及踩过ehcache的坑</a></h3>
+                        <h3 class="bh-card-main-title"><a href="detail.html" th:href="@{/detail/} + ${vlog.getTheme()}" th:utext="${vlog.getTheme()}"></a></h3>
                         <div class="bh-card-tag">
-                            <div><i class="fa fa-clock-o"></i><span th:text="${index.getCreateTime()}">2017-10-01 18:00</span></div>
-                            <div><i class="fa fa-eye"></i> <span th:text="${index.getSeeNum()}">156</span></div>
-                            <div><i class="fa fa-commenting-o"></i><span th:text="${index.getMsgNum()}">2</span></div>
+                            <div><i class="fa fa-clock-o"></i><span th:text="${vlog.getCreateTime()}"></span></div>
+                            <div><i class="fa fa-eye"></i> <span th:text="${vlog.getSeeNum()}"></span></div>
+                            <div><i class="fa fa-commenting-o"></i><span th:text="${vlog.getMsgNum()}"></span></div>
                         </div>
-                        <p class="bh-card-main-info" th:utext="${index.getRemark()}">最近为了提高J按的性能，减少数据查询的次数，J按大量使用了的Ehcache缓存作为起内置缓存，同时会话也是基于ehcache的重新实现的支持分部署的会议解决方案。</p>
+                        <p class="bh-card-main-info" th:utext="${vlog.getRemark()}"></p>
                     </div>
                 </div>
                 <div th:include="public :: footer"></div>
