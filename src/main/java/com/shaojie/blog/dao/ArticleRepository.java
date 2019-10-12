@@ -27,6 +27,14 @@ public interface ArticleRepository {
     List<Article> queryAllByType(Integer type);
 
     /**
+     * 查询所有的文章
+     *
+     * @return
+     */
+    @Query(value = "SELECT article.id,article.context,article.create_time,article.msg_num,article.remark,article.see_num,article.theme,article.type FROM article ",nativeQuery = true)
+    List<Article> queryAllArticle();
+
+    /**
      * 根据标题查看文章资讯
      *
      * @param theme

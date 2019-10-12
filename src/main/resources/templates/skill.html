@@ -23,7 +23,8 @@
                 <div th:include="public :: header"></div>
                 <div class="bh-card" th:each="skill : ${skill}">
                     <div class="bh-card-main">
-                        <h3 class="bh-card-main-title"><a href="detail.html" th:href="@{/detail/} + ${skill.getTheme()}" th:utext="${skill.getTheme()}"></a></h3>
+                        <h3 class="bh-card-main-title"><a href="detail.html" th:href="@{/detail/} + ${skill.getTheme()}"
+                                                          th:utext="${skill.getTheme()}"></a></h3>
                         <div class="bh-card-tag">
                             <div><i class="fa fa-clock-o"></i><span th:text="${skill.getCreateTime()}"></span></div>
                             <div><i class="fa fa-eye"></i> <span th:text="${skill.getSeeNum()}"></span></div>

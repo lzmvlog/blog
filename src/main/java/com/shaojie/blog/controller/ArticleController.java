@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class ArticleController {
 
+    private static final Integer SKILL = 1;
+    private static final Integer VLOG = 2;
+
     @Autowired
     private ArticleRepository articleRepository;
 
@@ -24,7 +27,7 @@ public class ArticleController {
      */
     @GetMapping(value = "/")
     public String index(Model model) {
-        model.addAttribute("index", articleRepository.queryAllByType(1));
+        model.addAttribute("index", articleRepository.queryAllArticle());
         return "index";
     }
 
@@ -47,7 +50,7 @@ public class ArticleController {
      */
     @GetMapping(value = "/skill")
     public String skill(Model model) {
-        model.addAttribute("skill", articleRepository.queryAllByType(2));
+        model.addAttribute("skill", articleRepository.queryAllByType(SKILL));
         return "skill";
     }
 
@@ -58,7 +61,7 @@ public class ArticleController {
      */
     @GetMapping(value = "/vlog")
     public String vlog(Model model) {
-        model.addAttribute("vlog", articleRepository.queryAllByType(3));
+        model.addAttribute("vlog", articleRepository.queryAllByType(VLOG));
         return "vlog";
     }
 

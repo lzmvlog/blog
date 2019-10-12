@@ -13,6 +13,9 @@
     <script th:src="@{static/bootstrap/js/bootstrap.min.js}"></script>
     <script th:src="@{static/highlight/highlight.pack.js}"></script>
     <link th:href="@{static/css/main.css}" rel="stylesheet">
+    <style>
+
+    </style>
 </head>
 <body>
 <div class="container-fluid" style="padding:0;">
@@ -21,16 +24,13 @@
         <div class="bh-main">
             <div class="bh-main-body">
                 <div th:include="public :: header"></div>
-                <div class="bh-card" th:each="index : ${index}">
+                <div class="bh-card" th:each="chain : ${chain}">
                     <div class="bh-card-main">
-                        <h3 class="bh-card-main-title"><a href="detail.html" th:href="@{/detail/} + ${index.getTheme()}"
-                                                          th:utext="${index.getTheme()}"></a></h3>
-                        <div class="bh-card-tag">
-                            <div><i class="fa fa-clock-o"></i><span th:text="${index.getCreateTime()}"></span></div>
-                            <div><i class="fa fa-eye"></i> <span th:text="${index.getSeeNum()}"></span></div>
-                            <div><i class="fa fa-commenting-o"></i><span th:text="${index.getMsgNum()}"></span></div>
-                        </div>
-                        <p class="bh-card-main-info" th:utext="${index.getRemark()}"></p>
+                        <h3 class="bh-card-main-title">
+                            <a href="" target="_blank" th:href="${chain.getUrl() }"
+                               th:utext="${chain.getNickname() }"></a>
+                        </h3>
+                        <p class="bh-card-main-info" th:utext="${chain.getRemark()}"></p>
                     </div>
                 </div>
                 <div th:include="public :: footer"></div>

@@ -35,12 +35,6 @@ public class Article {
     private String context;
 
     /**
-     * 备注
-     */
-    @Column(name = "remark")
-    private String remark;
-
-    /**
      * 文章创建的时间
      */
     @Temporal(TemporalType.DATE)
@@ -61,12 +55,17 @@ public class Article {
 
     /**
      * 文章类型
-     * 1、首页
-     * 2、技术
-     * 3、随笔
+     * 1、技术
+     * 2、随笔
      */
     @Column(name = "type")
     private Integer type;
+
+    /**
+     * 备注
+     */
+    @Column(name = "remark")
+    private String remark;
 
     public Article() {
     }

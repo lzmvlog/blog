@@ -13,7 +13,9 @@
     <script th:src="@{../static/bootstrap/js/bootstrap.min.js}"></script>
     <script th:src="@{../static/highlight/highlight.pack.js}"></script>
     <link th:href="@{../static/css/main.css}" rel="stylesheet">
-<!--    <link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' />-->
+    <!--    <link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' />-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 </head>
 <body>
 <div class="container-fluid" style="padding:0;">
@@ -33,53 +35,27 @@
                 <div class="bh-artical">
                     <span th:utext="${det.getContext()}" style="line-height: 0.1% !important;"></span>
                 </div>
-                </div>
-                <div class="comment">
-                    <h4 class="bh-title">发表评论</h4>
-                    <form class="bh-comment-from">
-                        <div>
-                            <span class="bh-comment-from-icon"><i class="fa fa-pencil"></i></span>
-                            <textarea placeholder="想说就说吧..." rows="1" style="resize: none;"></textarea>
-                        </div>
-                        <button type="button">发射</button>
-                        <span class="clearfix"></span>
-                    </form>
-                <!--    <div class="comment-panel">
-                        <div class="comment-panel-portrait">
-                            <img src="img/list-image.jpg" class="img-fluid rounded-circle" alt="Responsive image">
-                        </div>
-                        <div class="comment-panel-content" >
-                            <div class="comment-panel-content-item">
-                                <div>jean</div>
-                                <div>2017-10-01 18:00</div>
-                            </div>
-                            <div class="comment-panel-content-main">我上传的是FTP，怎么安装？</div>
-                            &lt;!&ndash;comment-secondary-panel&ndash;&gt;
-                            <div class="comment-secondary-panel">
-                                <div class="comment-panel-portrait">
-                                    <img src="img/list-image2.jpg" class="img-fluid rounded-circle" alt="Responsive image">
-                                </div>
-                                <div class="comment-panel-content">
-                                    <div class="comment-panel-content-item">
-                                        <div>海哥</div>
-                                        <div>2017-10-01 18:00</div>
-                                    </div>
-                                    <div class="comment-panel-content-main">稍等我看下。。。。</div>
-                                </div>
-                                <span class="clearfix"></span>
-                            </div>
-                            &lt;!&ndash;&ndash;&gt;
-                        </div>
-                        <span class="clearfix"></span>
-                        <div class="text-right text-primary"><a href="">回复</a></div>-->
-                    </div>
-                </div>
             </div>
-        </div>
-        <div th:include="public :: footer">
+            <div id="gitalk-container"></div>
         </div>
     </div>
 </div>
+<div th:include="public :: footer">
+</div>
+</div>
+</div>
 <script>hljs.initHighlightingOnLoad();</script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: 'b65c3c3f458aed7e650e',
+        clientSecret: 'd164c12a1a1f5ff3df11244ce3aef8064f6d3948',
+        repo: 'comment',
+        owner: 'lzmvlog',
+        admin: ['lzmvlog'],
+        // facebook-like distraction free mode
+        distractionFreeMode: false
+    })
+    gitalk.render('gitalk-container');
+</script>
 </body>
 </html>
