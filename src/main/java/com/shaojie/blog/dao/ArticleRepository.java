@@ -1,22 +1,17 @@
 package com.shaojie.blog.dao;
 
 import com.shaojie.blog.model.Article;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.RepositoryDefinition;
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 /**
  * @author ShaoJie
  * @Date 2019/10/9
  */
-@Repository
-@Transactional
-@RepositoryDefinition(domainClass = Article.class, idClass = Integer.class)
-public interface ArticleRepository {
+public interface ArticleRepository extends JpaRepository<Article, Integer> {
 
     /**
      * 根据类型查询 Article
@@ -24,15 +19,7 @@ public interface ArticleRepository {
      * @param type 文章类型
      * @return
      */
-    List<Article> queryAllByType(Integer type);
-
-    /**
-     * 查询所有的文章
-     *
-     * @return
-     */
-    @Query(value = "SELECT article.id,article.context,article.create_time,article.msg_num,article.remark,article.see_num,article.theme,article.type FROM article ",nativeQuery = true)
-    List<Article> queryAllArticle();
+    Page<Article> queryAllByType(Integer type, Pageable pageable);
 
     /**
      * 根据标题查看文章资讯
@@ -49,7 +36,7 @@ public interface ArticleRepository {
      * @return
      */
     @Modifying
-    @Query(value = "UPDATE article SET see_num = see_num + 1 WHERE theme = :theme ", nativeQuery = true)
+    @Query(value = "update article set see_num = see_num + 1 where theme = :theme ", nativeQuery = true)
     Integer updateSeeNum(String theme);
 
 }

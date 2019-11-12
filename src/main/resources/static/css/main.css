@@ -1118,13 +1118,13 @@ body {
     letter-spacing: 0px;
     margin: 0px;
     overflow-x: hidden;
-    font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif !important;
+    font-family: "新宋体","Source Sans Pro", "Helvetica Neue", Arial, sans-serif !important;
 }
 
 /*#write {max-width: 860px; margin: 0px auto;padding: 20px 30px 100px;   }*/
 #write p {
     line-height: 1.6rem;
-    word-spacing: 0.05rem;
+    /*word-spacing: 0.05rem;*/
 }
 
 #write ol li {
@@ -1155,7 +1155,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 1rem;
     margin-bottom: 1rem;
     font-weight: bold;
-    line-height: 1.4;
+    /*line-height: 0px;*/
     cursor: text;
 }
 

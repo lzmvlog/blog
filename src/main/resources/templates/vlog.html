@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ShaoJie</title>
+    <title>Shao · Jie · 随笔</title>
     <link rel="stylesheet" th:href="@{static/bootstrap/css/bootstrap.min.css}">
     <link th:href="@{static/css/bh-css.css}" rel="stylesheet">
     <link th:href="@{static/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
@@ -32,6 +32,20 @@
                         </div>
                         <p class="bh-card-main-info" th:utext="${vlog.getRemark()}"></p>
                     </div>
+                </div>
+                <div th:if="${vlog.hasPrevious()}">
+                    <a href="" th:href="'/?pageNum=' + ${vlog.previousPageable().getPageNumber()}">
+                        <button style="float: left;margin: 20px 0 0 57px" type="button" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+                            上一页
+                        </button>
+                    </a>
+                </div>
+                <div th:if="${vlog.hasNext()}">
+                    <a href="" th:href="'/?pageNum=' + ${vlog.nextPageable().getPageNumber()}">
+                        <button style="float: right;margin: 20px 100px 0 0" type="button" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+                            下一页
+                        </button>
+                    </a>
                 </div>
                 <div th:include="public :: footer"></div>
             </div>

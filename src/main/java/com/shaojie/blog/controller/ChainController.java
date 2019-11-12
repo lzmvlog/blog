@@ -1,10 +1,11 @@
 package com.shaojie.blog.controller;
 
-import com.shaojie.blog.dao.ChainRepository;
+import com.shaojie.blog.sercvice.impl.ChainServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author ShaoJie
@@ -13,8 +14,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ChainController {
 
-    @Autowired
-    private ChainRepository chainRepository;
+     @Autowired
+     private ChainServiceImpl chainService;
 
     /**
      * 友链
@@ -22,8 +23,8 @@ public class ChainController {
      * @return
      */
     @GetMapping(value = "/chain")
-    public String china(Model model) {
-        model.addAttribute("chain", chainRepository.queryAll());
+    public String china(Model model, @RequestParam(value = "pageNum", defaultValue = "0") int pageNum, @RequestParam(value = "pageSize", defaultValue = "10") int pageSize) {
+        model.addAttribute("chain", chainService.listChin(pageNum,pageSize));
         return "chain";
     }
 

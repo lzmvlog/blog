@@ -22,7 +22,3 @@ spring:
     open-in-view: true
     hibernate:
       ddl-auto: update
-      #      表中字段命名策略,这里要引入hibernate的核心包，不然这个命名策略会报错
-#      naming:
-#        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
-#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl

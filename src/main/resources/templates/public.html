@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ShaoJie</title>
+    <script th:src="@{static/jquery/jquery.min.js}"></script>
 </head>
 <body>
 <div th:fragment="sidebar">
@@ -21,7 +22,7 @@
                 <script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
                 <script>
-                  fetch('https://v1.hitokoto.cn/?=Novel&c=f')
+                  fetch('https://v1.hitokoto.cn/?c=f')
                       .then(function (res) {
                           return res.json();
                       })
@@ -39,9 +40,9 @@
 </div>
 
 <div th:fragment="header">
-    <nav class="bh-header">
+    <nav class="bh-header" id="header-title">
         <!--class="active"-->
-        <a href="#" class="active" th:href="@{/}">首页 .</a>
+        <a href="#" th:href="@{/}">首页 .</a>
         <a href="#" th:href="@{/skill}">技术 .</a>
         <a href="#" th:href="@{/vlog}">随笔 .</a>
         <a href="#" th:href="@{/chain}">友链 .</a>
@@ -51,10 +52,21 @@
 <div th:fragment="footer">
     <div class="bh-footer">
         <p class="bh-copyright"><a class="button right"
-                                   href="http://wpa.qq.com/msgrd?v=3&uin=846492429&site=qq&menu=yes">联系我们</a> ShaoJie
+                                   href="http://wpa.qq.com/msgrd?v=3&uin=1591313226&site=qq&menu=yes">联系我们</a> ShaoJie
         </p>
-        <p class="bh-copyright">copyright @ 2019 ShaoJie（www.lzmvlog.net）</p>
+        <p class="bh-copyright">copyright @ 2019 ShaoJie（www.lzmvlog.top）</p>
     </div>
+</div>
+
+<div th:fragment="pageturning">
+    <span>
+        <a href=""><button style="float: left;margin: 20px 0 0 57px " type="button" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+            上一页
+        </button></a>
+        <a href=""><button style="float: right;margin: 20px 200px 0 0 " type="button" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+            下一页
+        </button></a>
+    </span>
 </div>
 </body>
 </html>
