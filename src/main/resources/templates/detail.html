@@ -42,8 +42,6 @@
 </div>
 <div th:include="public :: footer">
 </div>
-</div>
-</div>
 <script>hljs.initHighlightingOnLoad();</script>
 <script>
     const gitalk = new Gitalk({
@@ -52,8 +50,8 @@
         repo: 'comment',
         owner: 'lzmvlog',
         admin: ['lzmvlog'],
-        // facebook-like distraction free mode
         distractionFreeMode: false
+        id: 'Gitalk初始化报错"validation failed"',
     })
     gitalk.render('gitalk-container');
 </script>
