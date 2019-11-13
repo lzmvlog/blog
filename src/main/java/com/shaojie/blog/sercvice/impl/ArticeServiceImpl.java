@@ -23,7 +23,7 @@ public class ArticeServiceImpl implements ArticleService {
     private ArticleRepository articleRepository;
 
     public Page<Article> listArticle(int pageNum, int pageSize) {
-        return articleRepository.findAll(PageRequest.of(pageNum, pageSize,Sort.by(Sort.Direction.DESC,"createTime")));
+        return articleRepository.findAll(PageRequest.of(pageNum, pageSize,Sort.by(Sort.Direction.DESC, "createTime")));
     }
 
     @Override

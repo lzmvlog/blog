@@ -24,7 +24,7 @@ public class ChainController {
      */
     @GetMapping(value = "/chain")
     public String china(Model model, @RequestParam(value = "pageNum", defaultValue = "0") int pageNum, @RequestParam(value = "pageSize", defaultValue = "10") int pageSize) {
-        model.addAttribute("chain", chainService.listChin(pageNum,pageSize));
+        model.addAttribute("chain", chainService.listChin(pageNum, pageSize));
         return "chain";
     }
 

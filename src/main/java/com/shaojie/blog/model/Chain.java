@@ -24,13 +24,13 @@ public class Chain {
     /**
      * 友链地址
      */
-    @Column(name = "url",length = 100)
+    @Column(name = "url", length = 100)
     private String url;
 
     /**
      * 友链昵称
      */
-    @Column(name = "nickname",length = 100)
+    @Column(name = "nickname", length = 100)
     private String nickname;
 
     /**

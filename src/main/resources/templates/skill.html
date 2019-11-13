@@ -35,14 +35,16 @@
                 </div>
                 <div th:if="${skill.hasPrevious()}">
                     <a href="" th:href="'/?pageNum=' + ${skill.previousPageable().getPageNumber()}">
-                        <button style="float: left;margin: 20px 0 0 57px" type="button" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+                        <button style="float: left;margin: 20px 0 0 57px" type="button" data-loading-text="Loading..."
+                                class="btn btn-primary" autocomplete="off">
                             上一页
                         </button>
                     </a>
                 </div>
                 <div th:if="${skill.hasNext()}">
                     <a href="" th:href="'/?pageNum=' + ${skill.nextPageable().getPageNumber()}">
-                        <button style="float: right;margin: 20px 100px 0 0" type="button" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+                        <button style="float: right;margin: 20px 100px 0 0" type="button" data-loading-text="Loading..."
+                                class="btn btn-primary" autocomplete="off">
                             下一页
                         </button>
                     </a>

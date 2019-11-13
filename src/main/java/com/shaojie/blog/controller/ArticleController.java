@@ -34,8 +34,8 @@ public class ArticleController {
      * @return
      */
     @GetMapping(value = "/")
-    public String index(Model model ,@RequestParam(value = "pageNum", defaultValue = "0") int pageNum, @RequestParam(value = "pageSize", defaultValue = "10") int pageSize) {
-        model.addAttribute("index",articeService.listArticle(pageNum, pageSize));
+    public String index(Model model, @RequestParam(value = "pageNum", defaultValue = "0") int pageNum, @RequestParam(value = "pageSize", defaultValue = "10") int pageSize) {
+        model.addAttribute("index", articeService.listArticle(pageNum, pageSize));
         return "index";
     }
 
@@ -45,7 +45,7 @@ public class ArticleController {
      * @return
      */
     @GetMapping(value = "/skill")
-    public String skill(Model model,@RequestParam(value = "pageNum", defaultValue = "0") int pageNum, @RequestParam(value = "pageSize", defaultValue = "10") int pageSize) {
+    public String skill(Model model, @RequestParam(value = "pageNum", defaultValue = "0") int pageNum, @RequestParam(value = "pageSize", defaultValue = "10") int pageSize) {
         model.addAttribute("skill", articeService.queryAllByType(SKILL, pageNum, pageSize));
         return "skill";
     }
@@ -56,7 +56,7 @@ public class ArticleController {
      * @return
      */
     @GetMapping(value = "/vlog")
-    public String vlog(Model model,@RequestParam(value = "pageNum", defaultValue = "0") int pageNum, @RequestParam(value = "pageSize", defaultValue = "10") int pageSize) {
+    public String vlog(Model model, @RequestParam(value = "pageNum", defaultValue = "0") int pageNum, @RequestParam(value = "pageSize", defaultValue = "10") int pageSize) {
         model.addAttribute("vlog", articeService.queryAllByType(VLOG, pageNum, pageSize));
         return "vlog";
     }
@@ -73,16 +73,16 @@ public class ArticleController {
     @GetMapping(value = "/detail/{theme}")
     public String detail(Model model, @PathVariable(value = "theme") String theme, HttpSession session) throws UnknownHostException {
         // 点赞控制
-        if (null != session.getAttribute("ip")) {
+        if (null != session.getAttribute("ip" + theme)) {
             if (!(InetAddress.getLocalHost().getHostAddress().equals(session.getAttribute("ip")))) {
                 articeService.updateSeeNum(theme);
                 session.setAttribute("ip", InetAddress.getLocalHost().getHostAddress());
             }
         }
-        if (null == session.getAttribute("ip")) {
+        if (null == session.getAttribute("ip" + theme)) {
             articeService.updateSeeNum(theme);
-            session.setAttribute("ip", InetAddress.getLocalHost().getHostAddress());
-    }
+            session.setAttribute("ip" + theme, InetAddress.getLocalHost().getHostAddress());
+        }
         model.addAttribute("det", articeService.queryAllByTheme(theme));
         return "detail";
     }
