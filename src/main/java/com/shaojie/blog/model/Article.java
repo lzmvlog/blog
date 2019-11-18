@@ -48,12 +48,6 @@ public class Article {
     private Integer seeNum;
 
     /**
-     * 评论的次数
-     */
-    @Column(name = "msg_num")
-    private Integer msgNum;
-
-    /**
      * 文章类型
      * 1、技术
      * 2、随笔
@@ -70,12 +64,11 @@ public class Article {
     public Article() {
     }
 
-    public Article(String theme, String context, Integer seeNum, Integer msgNum) {
+    public Article(String theme, String context, Integer seeNum) {
         this.theme = theme;
         this.context = context;
         this.createTime = new Date();
         this.seeNum = seeNum;
-        this.msgNum = msgNum;
     }
 
 }

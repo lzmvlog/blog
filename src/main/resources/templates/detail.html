@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title th:text="${det.getTheme()}"></title>
-    <link rel="icon" th:href="@{../static/img/ha.ico}" type="image/gif">
+<!--    <link rel="icon" th:href="@{../static/img/ha.ico}" type="image/gif">-->
     <link rel="stylesheet" th:href="@{../static/bootstrap/css/bootstrap.min.css}">
     <link th:href="@{../static/css/bh-css.css}" rel="stylesheet">
     <link th:href="@{../static/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
@@ -17,6 +17,7 @@
     <!--    <link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' />-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
 </head>
 <body>
 <div class="container-fluid" style="padding:0;">
@@ -50,8 +51,8 @@
         repo: 'comment',
         owner: 'lzmvlog',
         admin: ['lzmvlog'],
-        id: location.href,
-        distractionFreeMode: false
+        id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+        distractionFreeMode: false,
     });
     gitalk.render('gitalk-container');
 </script>

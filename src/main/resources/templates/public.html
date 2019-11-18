@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ShaoJie</title>
-    <link rel="icon" th:href="@{static/img/ha.ico}" type="image/gif">
+<!--    <link rel="icon" th:href="@{static/img/ha.ico}" type="image/gif">-->
     <script th:src="@{static/jquery/jquery.min.js}"></script>
 </head>
 <body>
@@ -32,7 +32,7 @@
                           hitokoto.innerText = data.hitokoto;
                       })
                       .catch(function (err) {
-                          console.error(err);
+                          // console.error(err);
                       })
                 </script>
             </span>
@@ -59,6 +59,7 @@
     </div>
 </div>
 
+<!--
 <div th:fragment="pageturning">
     <span>
         <a href=""><button style="float: left;margin: 20px 0 0 57px " type="button" data-loading-text="Loading..."
@@ -71,5 +72,6 @@
         </button></a>
     </span>
 </div>
+-->
 </body>
 </html>
