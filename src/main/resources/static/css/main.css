@@ -1019,7 +1019,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
     border-width: 0px;
     background: 0px 0px;
     font-family: inherit;
-    font-size: inherit;
+    font-size: 15px;
     margin: 0px;
     white-space: pre;
     word-wrap: normal;
@@ -1360,7 +1360,7 @@ table tr th:last-child, table tr td:last-child {
 #write .md-fences {
     border: 1px solid rgb(244, 244, 244);
     -webkit-font-smoothing: initial;
-    line-height: 1.43rem;
+    line-height: 1.60rem;
     border-radius: 2px;
     font-size: 0.85rem;
     word-wrap: normal;
