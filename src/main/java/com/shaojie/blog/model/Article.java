@@ -31,7 +31,7 @@ public class Article {
     /**
      * 文章的内容
      */
-    @Column(name = "context", columnDefinition = "longtext")
+    @Column(name = "context", columnDefinition = "mediumtext")
     private String context;
 
     /**
