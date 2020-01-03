@@ -35,7 +35,7 @@ public class ArticleController {
      */
     @GetMapping(value = "/")
     public String index(Model model, @RequestParam(value = "pageNum", defaultValue = "0") int pageNum, @RequestParam(value = "pageSize", defaultValue = "6") int pageSize) {
-        model.addAttribute("index", articeService.listArticle(pageNum, pageSize));
+        model.addAttribute("index", articeService.queryAllByType(SKILL, pageNum, pageSize));
         return "index";
     }
 
@@ -72,19 +72,20 @@ public class ArticleController {
      */
     @GetMapping(value = "/detail/{theme}")
     public String detail(Model model, @PathVariable(value = "theme") String theme, HttpSession session) throws UnknownHostException {
-        // 点赞控制
-        if (null != session.getAttribute(theme)) {
-            if (!(InetAddress.getLocalHost().getHostAddress().equals(session.getAttribute(theme)))) {
-                articeService.updateSeeNum(theme);
-                session.setAttribute(theme, InetAddress.getLocalHost().getHostAddress());
-            }
-        }
-        if (null == session.getAttribute(theme)) {
-            articeService.updateSeeNum(theme);
-            session.setAttribute(theme, InetAddress.getLocalHost().getHostAddress());
-        }
+//        // 点赞控制
+//        if (null != session.getAttribute(theme)) {
+//            if (!(InetAddress.getLocalHost().getHostAddress().equals(session.getAttribute(theme)))) {
+//                articeService.updateSeeNum(theme);
+//                session.setAttribute(theme, InetAddress.getLocalHost().getHostAddress());
+//            }
+//        }
+//        if (null == session.getAttribute(theme)) {
+//            articeService.updateSeeNum(theme);
+//            session.setAttribute(theme, InetAddress.getLocalHost().getHostAddress());
+//        }
         model.addAttribute("det", articeService.queryAllByTheme(theme));
         return "detail";
     }
+
 
 }

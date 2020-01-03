@@ -42,9 +42,5 @@ public class Chain {
     public Chain() {
     }
 
-    public Chain(String url, String nickname) {
-        this.url = url;
-        this.nickname = nickname;
-    }
 
 }

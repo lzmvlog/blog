@@ -44,8 +44,8 @@ public class Article {
     /**
      * 查看的次数
      */
-    @Column(name = "see_num")
-    private Integer seeNum;
+//    @Column(name = "see_num")
+//    private Integer seeNum;
 
     /**
      * 文章类型
@@ -62,13 +62,6 @@ public class Article {
     private String remark;
 
     public Article() {
-    }
-
-    public Article(String theme, String context, Integer seeNum) {
-        this.theme = theme;
-        this.context = context;
-        this.createTime = new Date();
-        this.seeNum = seeNum;
     }
 
 }
